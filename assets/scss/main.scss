@@ -1,0 +1,19 @@
+//= Fonts =//
+@import "utils/fonts";
+
+//= Variables =//
+@import "utils/variables";
+
+//= Helpers =//
+@import "utils/helpers";
+
+//= Vendors =//
+@import "vendors/bootstrap.min.css";
+@import "vendors/bootstrap-theme.min.css";
+
+//= Components =//
+@import "components/header";
+@import "components/footer";
+
+//= Views =//
+@import "views/homepage";

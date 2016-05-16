@@ -1,0 +1,16 @@
+.hero-section {
+  min-height: 1080px;
+  background-image: url(hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 0;
+  .main-title {
+    margin-top: 9em;
+  }
+}
+
+@media all and (max-width: 1366px) {
+  .hero-section {
+    background-position: -500px 0;
+  }
+}

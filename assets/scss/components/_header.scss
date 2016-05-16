@@ -1,0 +1,28 @@
+.navbar-header {
+  .photorra-logo {
+    font-size: 0;
+    span {
+      font-size: 30px;
+    }
+  }
+  .word-01 {
+    font-weight: bold;
+    color: $color-darkorange;
+  }
+  .word-02 {
+    font-style: italic;
+    color: $color-deepskyblue;
+  }
+}
+.navbar {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.header-container {
+  .navbar-form {
+    & > * {
+      margin: 0 .2em;
+    }
+  }
+}

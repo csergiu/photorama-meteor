@@ -1,0 +1,38 @@
+@import url(vendors/bootstrap.min.css);
+@import url(vendors/bootstrap-theme.min.css);
+.navbar-header .photorra-logo {
+  font-size: 0; }
+  .navbar-header .photorra-logo span {
+    font-size: 30px; }
+.navbar-header .word-01 {
+  font-weight: bold;
+  color: #FF8C00; }
+.navbar-header .word-02 {
+  font-style: italic;
+  color: #00BFFF; }
+
+.navbar {
+  border-radius: 0;
+  margin-bottom: 0; }
+
+.header-container .navbar-form > * {
+  margin: 0 .2em; }
+
+footer {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: .5em 0; }
+  footer p {
+    margin: 0; }
+
+.hero-section {
+  min-height: 1080px;
+  background-image: url(hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 0; }
+  .hero-section .main-title {
+    margin-top: 9em; }
+
+@media all and (max-width: 1366px) {
+  .hero-section {
+    background-position: -500px 0; } }
