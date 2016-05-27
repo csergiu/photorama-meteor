@@ -1,17 +1,15 @@
 .navbar-header {
-  .photorra-logo {
+  .photorama-logo {
     font-size: 0;
     span {
-      font-size: 30px;
+      color: $color-darkgrey;
+      font-family: 'Liberation Bold', Arial, sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      .dot {
+        color: $color-darkorange;
+      }
     }
-  }
-  .word-01 {
-    font-weight: bold;
-    color: $color-darkorange;
-  }
-  .word-02 {
-    font-style: italic;
-    color: $color-deepskyblue;
   }
 }
 .navbar {
@@ -19,10 +17,104 @@
   margin-bottom: 0;
 }
 
+.navbar-inverse {
+  border: 0;
+  background-image: none;
+  background: #f5f7f8;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
 .header-container {
   .navbar-form {
     & > * {
       margin: 0 .2em;
     }
+  }
+  .input-group-addon {
+    min-width: 12em;
+  }
+}
+
+.login-form-container {
+  form,
+  .register-modal-container {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.user-header-area-container {
+  .user-avatar {
+    position: relative;
+    width: 2.3em;
+    height: 2.3em;
+    overflow: hidden;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-top: 50%;
+      margin-left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 100%;
+    }
+  }
+  .user-email {
+    margin: 0 0 0 .5em;
+  }
+  .toolbar-icon {
+    position: relative;
+    height: 3.57em;
+    float: right;
+    padding: 0 2em;
+    border-left: 1px solid #eceff1;
+    cursor: pointer;
+    a {
+      color: $color-lightgrey;
+      &.full-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        & > * {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      &:hover {
+        text-decoration: none;
+        color: $color-darkgrey;
+      }
+    }
+    &:hover {
+      background-color: #eceff1;
+    }
+    &:first-child {
+      border-right: 1px solid #eceff1;
+    }
+    &:last-child {
+      border-left: 1px solid #eceff1;
+    }
+    &:before {
+      content: '';
+      width: 0;
+      height: 100%;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    & > * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  .userinfo {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

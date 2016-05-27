@@ -1,28 +1,158 @@
 @import url(vendors/bootstrap.min.css);
 @import url(vendors/bootstrap-theme.min.css);
-.navbar-header .photorra-logo {
+@import url(vendors/font-awesome.min.css);
+@font-face {
+  font-family: 'Liberation Bold';
+  src: url("LiberationSans-Bold.ttf") format("ttf"), url("liberationsans-bold-webfont.woff") format("woff"), url("liberationsans-bold-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Liberation Regular';
+  src: url("LiberationSans-Regular.ttf") format("ttf"), url("liberationsans-regular-webfont.woff") format("woff"), url("liberationsans-regular-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal; }
+.navbar-header .photorama-logo {
   font-size: 0; }
-  .navbar-header .photorra-logo span {
-    font-size: 30px; }
-.navbar-header .word-01 {
-  font-weight: bold;
-  color: #FF8C00; }
-.navbar-header .word-02 {
-  font-style: italic;
-  color: #00BFFF; }
+  .navbar-header .photorama-logo span {
+    color: #444;
+    font-family: 'Liberation Bold', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold; }
+    .navbar-header .photorama-logo span .dot {
+      color: #FF8C00; }
 
 .navbar {
   border-radius: 0;
   margin-bottom: 0; }
 
+.navbar-inverse {
+  border: 0;
+  background-image: none;
+  background: #f5f7f8;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2); }
+
 .header-container .navbar-form > * {
   margin: 0 .2em; }
+.header-container .input-group-addon {
+  min-width: 12em; }
+
+.login-form-container form,
+.login-form-container .register-modal-container {
+  display: inline-block;
+  vertical-align: middle; }
+
+.user-header-area-container .user-avatar {
+  position: relative;
+  width: 2.3em;
+  height: 2.3em;
+  overflow: hidden; }
+  .user-header-area-container .user-avatar img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 50%;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%; }
+.user-header-area-container .user-email {
+  margin: 0 0 0 .5em; }
+.user-header-area-container .toolbar-icon {
+  position: relative;
+  height: 3.57em;
+  float: right;
+  padding: 0 2em;
+  border-left: 1px solid #eceff1;
+  cursor: pointer; }
+  .user-header-area-container .toolbar-icon a {
+    color: #607d8b; }
+    .user-header-area-container .toolbar-icon a.full-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+      .user-header-area-container .toolbar-icon a.full-link > * {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+    .user-header-area-container .toolbar-icon a:hover {
+      text-decoration: none;
+      color: #444; }
+  .user-header-area-container .toolbar-icon:hover {
+    background-color: #eceff1; }
+  .user-header-area-container .toolbar-icon:first-child {
+    border-right: 1px solid #eceff1; }
+  .user-header-area-container .toolbar-icon:last-child {
+    border-left: 1px solid #eceff1; }
+  .user-header-area-container .toolbar-icon:before {
+    content: '';
+    width: 0;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle; }
+  .user-header-area-container .toolbar-icon > * {
+    display: inline-block;
+    vertical-align: middle; }
+.user-header-area-container .userinfo {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%); }
 
 footer {
   background-color: rgba(255, 255, 255, 0.6);
   padding: .5em 0; }
   footer p {
     margin: 0; }
+
+.login-preloader {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; }
+  .login-preloader img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+.avatar-container {
+  display: inline-block;
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 1em; }
+  .avatar-container:hover .upload-overlay {
+    opacity: 1; }
+  .avatar-container img {
+    position: relative;
+    max-width: 100%;
+    z-index: 1; }
+  .avatar-container input[type="file"] {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; }
+  .avatar-container .upload-overlay {
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3) url("icon-camera.png") center center no-repeat;
+    background-size: 4em; }
 
 .hero-section {
   min-height: 1080px;
@@ -36,3 +166,7 @@ footer {
 @media all and (max-width: 1366px) {
   .hero-section {
     background-position: -500px 0; } }
+/* Misc settings */
+body {
+  background-color: #fcfcfc;
+  color: #616161; }

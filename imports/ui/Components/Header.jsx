@@ -1,5 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { Meteor } from 'meteor/meteor';
+import { RegisterModal } from './RegisterModal.jsx';
+import { UserHeaderArea } from './UserHeaderArea.jsx';
+import { LoginForm } from './LoginForm.jsx';
 import {
   Navbar,
   Nav,
@@ -12,49 +15,39 @@ import {
 } from 'react-bootstrap';
 
 export default class Header extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      loggedIn: false
+    };
+  }
+
   render() {
+    let loggedIn;
+    let appHomepage = "/";
+
+    if (this.props.currentUser) {
+      loggedIn = <UserHeaderArea {...this.props} />;
+      appHomepage = "/dashboard"
+    } else {
+      loggedIn = <LoginForm />;
+    }
+
     return (
       <div className="header-container">
         <Navbar inverse>
           <Navbar.Header>
             <Navbar.Brand>
-              <a className="photorra-logo" href="/">
-                <span className="word-01">Photo</span>
-                <span className="word-02">rra</span>
+              <a className="photorama-logo" href={ appHomepage }>
+                <span>Photorama<span className="dot">.</span></span>
               </a>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav pullRight>
-              <form>
-                <Navbar.Form>
-                  <FormGroup>
-                    <FormControl
-                      type="text"
-                      placeholder="Email"
-                    >
-                    </FormControl>
-                  </FormGroup>
-                  <FormGroup>
-                    <FormControl
-                      type="password"
-                      placeholder="Password"
-                    >
-                    </FormControl>
-                  </FormGroup>
-                  <Button className="btn-sign-in"
-                          bsStyle="success"
-                          submit>
-                    Sign In
-                  </Button>
-                  <Button className="btn-sign-up"
-                          bsStyle="primary"
-                          href="/signup">
-                    Sign Up
-                  </Button>
-                </Navbar.Form>
-              </form>
+              { loggedIn }
             </Nav>
           </Navbar.Collapse>
         </Navbar>

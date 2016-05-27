@@ -10,10 +10,21 @@
 //= Vendors =//
 @import "vendors/bootstrap.min.css";
 @import "vendors/bootstrap-theme.min.css";
+@import "vendors/font-awesome.min.css";
 
 //= Components =//
 @import "components/header";
 @import "components/footer";
+@import "components/misc";
+@import "components/register";
 
 //= Views =//
 @import "views/homepage";
+@import "views/dashboard";
+
+/* Misc settings */
+
+body {
+	background-color: #fcfcfc;
+	color: #616161;
+}
