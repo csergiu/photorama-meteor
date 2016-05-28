@@ -5,3 +5,11 @@ footer {
     margin: 0;
   }
 }
+.logged-in {
+	.footer-container {
+		width: 100%;
+		footer {
+			position: static;
+		}
+	}
+}

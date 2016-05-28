@@ -1,0 +1,86 @@
+.sidebar-wrapper {
+	width: 20%;
+	height: 100%;
+	float: left;
+	background-color: $color-cyan;
+	color: $color-chillwhite;
+
+	.sidebar {
+		position: relative;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	.userinfo {
+		padding: 2em 1em 1em;
+		position: relative;
+		.avatar {
+			width: 5em;
+			height: 5em;
+			margin: 0 auto;
+		}
+		.info {
+			padding: .5em 0;
+			.username {
+				display: block;
+				font-size: 1.2em;
+				text-align: center;
+			}
+			.useremail {
+				font-size: .7em;
+				color: $color-lightcyan;
+				display: block;
+				text-align: center;
+			}
+		}
+	}
+
+	nav {
+		.main-menu {
+			list-style-type: none;
+			padding-left: 0 !important;
+			li {
+				&:hover {
+					a {
+						background-color: #007179;
+						color: #e0f7fa;
+					}
+				}
+				&.active {
+					a {
+						background-color: #99e4ee;
+						color: $color-cyan;
+						box-shadow: 4px 0 0 0 #ef6c00 inset;
+					}
+				}
+				a {
+					font-weight: 600;
+					font-family: "Open Sans", Arial, sans-serif;
+					color: $color-lightercyan;
+					display: block;
+					padding: .85em 1em;
+					position: relative;
+					i {
+						margin-left: 0;
+						font-size: .8em;
+						margin-right: 1em;
+						min-width: 1.5em;
+						text-align: center;
+						display: inline-block;
+					}
+				}
+			}
+		}
+		.menu-title {
+			font-size: .75em;
+			font-weight: 600;
+			padding: 1em;
+			color: $color-lightcyan;
+			background-color: $color-darkcyan;
+			text-transform: uppercase;
+			display: block;
+			font-family: "Open Sans", Arial, sans-serif;
+			box-shadow: 0 -1px 7px 0 rgba(0, 0, 0, 0.5);
+		}
+	}
+}

@@ -13,7 +13,7 @@ export class AvatarUploader extends Component {
   componentWillMount() {
     Slingshot.fileRestrictions("avatar", {
       allowedFileTypes: ["image/png", "image/jpeg", "image/gif"],
-      maxSize: 2 * 500 * 500
+      maxSize: 2 * 1024 * 1024
     }); l
   }
 

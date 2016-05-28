@@ -21,16 +21,20 @@ export class MainLayout extends Component {
 	}
 
 	mainLayout() {
+		let mainClasses = "main-layout-container ";
+		this.props.currentUser ? mainClasses += "logged-in " : "";
+
 		return (
-			<div className="main-layout-container">
+			<div className={mainClasses}>
 				<Header currentUser={ this.props.currentUser } />				
 
-			    <div className="content-container">
+			    <div className="content-container clearfix">
 			    	{ this.props.currentUser ? <Sidebar {...this.props} /> : '' }
-			    	{ this.getView() }
+			    	<div className="view-container">
+			    		{ this.getView() }
+			    		<Footer />
+		    		</div>
 			    </div>
-
-	    		<Footer />
 			</div>
 		);
 	}
@@ -59,7 +63,8 @@ export default createContainer(() => {
 			];
 
 			let authenticatedRoutes = [
-				'dashboard'
+				'dashboard',
+				'upload'
 			];
 
 			return this.currentUser ? authenticatedRoutes.indexOf(route) > -1 : publicRoutes.indexOf(route) > -1;

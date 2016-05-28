@@ -3,6 +3,11 @@ if (Meteor.isServer) {
 		'users.insert' (user) {
 			let avatar = user.profile.avatar;
 
+			/* custom password validation */
+			if (user.password.length < 6 && user.password.length > 20) {
+				throw new Meteor.Error(500, "Error: Password validation failed");
+			}
+
 			let userId = Accounts.createUser({
 		      email: user.email,
 		      password: user.password,

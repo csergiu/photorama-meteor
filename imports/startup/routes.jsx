@@ -6,6 +6,7 @@ import MainLayout from '../ui/MainLayout.jsx';
 import { Homepage } from '../ui/Views/Homepage.jsx';
 import { Register } from '../ui/Views/Register.jsx';
 import { Dashboard } from '../ui/Views/Dashboard.jsx';
+import { Upload } from '../ui/Views/Upload.jsx';
 
 const publicRoutes = FlowRouter.group({ name: 'public' });
 const authenticatedRoutes = FlowRouter.group( { name: 'authenticated' } );
@@ -36,6 +37,16 @@ authenticatedRoutes.route('/dashboard', {
   action() {
     mount(MainLayout, {
       content: (props) => <Dashboard {...props} />
+    })
+  }
+});
+
+// Upload
+authenticatedRoutes.route('/upload', {
+  name: 'upload',
+  action() {
+    mount(MainLayout, {
+      content: (props) => <Upload {...props} />
     })
   }
 });

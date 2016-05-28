@@ -23,7 +23,7 @@ export class RegisterForm extends Component {
   componentWillMount() {
       Slingshot.fileRestrictions("userAvatar", {
         allowedFileTypes: ["image/png", "image/jpeg", "image/gif"],
-        maxSize: 2 * 500 * 500
+        maxSize: 2 * 1024 * 1024
       });
   }
 
@@ -49,22 +49,25 @@ export class RegisterForm extends Component {
         alert('Something went wrong: ', err);
       }
       else {
-        var avatar = this.refs.avatarInput.files[0];
+        var avatar = this.refs.avatarInput.files[0] || null;
+
         Meteor.loginWithPassword(user.email, user.password, (err) => {
           if (err) {
             alert('Something went wrong: ', err);
           } else {
-            var uploader = new Slingshot.Upload("userAvatar");
+            if (avatar !== null) {
+              var uploader = new Slingshot.Upload("userAvatar");
             
-            uploader.send(avatar, function (error, downloadUrl) {
-              if (error) {
-                console.error('Error uploading', uploader.xhr.response);
-                alert(error);
-              }
-              else {
-                Meteor.users.update(Meteor.user()._id, {$set: {"profile.avatar": downloadUrl}});
-              }
-            });
+              uploader.send(avatar, function (error, downloadUrl) {
+                if (error) {
+                  console.error('Error uploading', uploader.xhr.response);
+                  alert(error);
+                }
+                else {
+                  Meteor.users.update(Meteor.user()._id, {$set: {"profile.avatar": downloadUrl}});
+                }
+              });
+            }
           }
         });
       }

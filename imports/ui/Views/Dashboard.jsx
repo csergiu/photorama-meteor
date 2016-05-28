@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import {
+	PageHeader
+} from 'react-bootstrap';
 
 export class Dashboard extends Component {
 	constructor(props) {
@@ -7,8 +10,8 @@ export class Dashboard extends Component {
 
 	render() {
 		return (
-		  <div ref="container" className="dashboard-container text-center">
-		  	
+		  <div className="dashboard-container">
+		  	<PageHeader>Dashboard</PageHeader>
 		  </div>
 		)
 	}

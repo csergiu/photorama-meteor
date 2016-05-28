@@ -1,10 +1,10 @@
-Slingshot.fileRestrictions("userAvatar", {
+Slingshot.fileRestrictions("userPhotos", {
   allowedFileTypes: ["image/png", "image/jpeg", "image/jpg"],
-  maxSize: 2 * 1024 * 1024 // 2 megs max
+  maxSize: 30 * 1024 * 1024 // 30 megs max
 });
 
 
-Slingshot.createDirective("userAvatar", Slingshot.S3Storage, {
+Slingshot.createDirective("userPhotos", Slingshot.S3Storage, {
   bucket: "photoramaimages",
 
   acl: "public-read",
@@ -22,6 +22,6 @@ Slingshot.createDirective("userAvatar", Slingshot.S3Storage, {
 
   key: function (file, metaContext) {
     var user = Meteor.users.findOne(this.userId);
-    return "users/" + user._id + "/" + Date.now() + "-avatar-" + file.name;
+    return "users/" + user._id + "/photos/" + Date.now() + file.name;
   }
 });

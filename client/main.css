@@ -1,6 +1,7 @@
 @import url(vendors/bootstrap.min.css);
 @import url(vendors/bootstrap-theme.min.css);
 @import url(vendors/font-awesome.min.css);
+@import url(vendors/select2.css);
 @font-face {
   font-family: 'Liberation Bold';
   src: url("LiberationSans-Bold.ttf") format("ttf"), url("liberationsans-bold-webfont.woff") format("woff"), url("liberationsans-bold-webfont.woff2") format("woff2");
@@ -11,6 +12,23 @@
   src: url("LiberationSans-Regular.ttf") format("ttf"), url("liberationsans-regular-webfont.woff") format("woff"), url("liberationsans-regular-webfont.woff2") format("woff2");
   font-weight: normal;
   font-style: normal; }
+@font-face {
+  font-family: 'Open Sans';
+  src: url("OpenSans-Regular-webfont.eot");
+  src: url("OpenSans-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("OpenSans-Regular-webfont.woff") format("woff"), url("OpenSans-Regular-webfont.ttf") format("truetype"), url("OpenSans-Regular-webfont.svg#open_sansregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+.display-block {
+  display: block !important; }
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
 .navbar-header .photorama-logo {
   font-size: 0; }
   .navbar-header .photorama-logo span {
@@ -99,13 +117,21 @@
   position: absolute;
   top: 100%;
   left: 50%;
-  transform: translateX(-50%); }
+  transform: translateX(-50%);
+  width: 100%;
+  border-radius: 0;
+  margin-top: 5px; }
 
 footer {
   background-color: rgba(255, 255, 255, 0.6);
   padding: .5em 0; }
   footer p {
     margin: 0; }
+
+.logged-in .footer-container {
+  width: 100%; }
+  .logged-in .footer-container footer {
+    position: static; }
 
 .login-preloader {
   position: fixed;
@@ -154,6 +180,69 @@ footer {
     background: rgba(0, 0, 0, 0.3) url("icon-camera.png") center center no-repeat;
     background-size: 4em; }
 
+.sidebar-wrapper {
+  width: 20%;
+  height: 100%;
+  float: left;
+  background-color: #006064;
+  color: #e0f7fa; }
+  .sidebar-wrapper .sidebar {
+    position: relative;
+    height: 100%;
+    overflow: hidden; }
+  .sidebar-wrapper .userinfo {
+    padding: 2em 1em 1em;
+    position: relative; }
+    .sidebar-wrapper .userinfo .avatar {
+      width: 5em;
+      height: 5em;
+      margin: 0 auto; }
+    .sidebar-wrapper .userinfo .info {
+      padding: .5em 0; }
+      .sidebar-wrapper .userinfo .info .username {
+        display: block;
+        font-size: 1.2em;
+        text-align: center; }
+      .sidebar-wrapper .userinfo .info .useremail {
+        font-size: .7em;
+        color: #00acc1;
+        display: block;
+        text-align: center; }
+  .sidebar-wrapper nav .main-menu {
+    list-style-type: none;
+    padding-left: 0 !important; }
+    .sidebar-wrapper nav .main-menu li:hover a {
+      background-color: #007179;
+      color: #e0f7fa; }
+    .sidebar-wrapper nav .main-menu li.active a {
+      background-color: #99e4ee;
+      color: #006064;
+      box-shadow: 4px 0 0 0 #ef6c00 inset; }
+    .sidebar-wrapper nav .main-menu li a {
+      font-weight: 600;
+      font-family: "Open Sans", Arial, sans-serif;
+      color: #80deea;
+      display: block;
+      padding: .85em 1em;
+      position: relative; }
+      .sidebar-wrapper nav .main-menu li a i {
+        margin-left: 0;
+        font-size: .8em;
+        margin-right: 1em;
+        min-width: 1.5em;
+        text-align: center;
+        display: inline-block; }
+  .sidebar-wrapper nav .menu-title {
+    font-size: .75em;
+    font-weight: 600;
+    padding: 1em;
+    color: #00acc1;
+    background-color: #005155;
+    text-transform: uppercase;
+    display: block;
+    font-family: "Open Sans", Arial, sans-serif;
+    box-shadow: 0 -1px 7px 0 rgba(0, 0, 0, 0.5); }
+
 .hero-section {
   min-height: 1080px;
   background-image: url(hero-bg.jpg);
@@ -166,7 +255,98 @@ footer {
 @media all and (max-width: 1366px) {
   .hero-section {
     background-position: -500px 0; } }
+.dropzone .well {
+  border: 1px dashed #444;
+  text-align: center;
+  cursor: pointer;
+  color: #444;
+  transition: .3s all; }
+  .dropzone .well:hover {
+    color: #607d8b; }
+.dropzone.is-dragover .well {
+  border: 1px solid #444; }
+.dropzone .circle {
+  font-size: 4em; }
+.dropzone .info-message {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 1.5em; }
+
+.photo-list-container {
+  float: left;
+  width: 77.5%; }
+  .photo-list-container .photo-panel {
+    float: left;
+    width: 13em;
+    min-height: 13em;
+    margin: 0 2% 2% 0; }
+    .photo-list-container .photo-panel:nth-child(4n) {
+      margin-right: 0; }
+    .photo-list-container .photo-panel .photo-name {
+      margin: .8em 0 0; }
+    .photo-list-container .photo-panel .album-label {
+      margin: .5em 0 0; }
+    .photo-list-container .photo-panel span.select2 {
+      width: 100% !important;
+      margin: .5em 0; }
+    .photo-list-container .photo-panel .btn {
+      font-size: .9em;
+      padding: .4em .95em; }
+      .photo-list-container .photo-panel .btn.btn-upload {
+        float: left; }
+      .photo-list-container .photo-panel .btn.btn-delete {
+        float: right; }
+    .photo-list-container .photo-panel .image-container {
+      width: 10.715em;
+      height: 10.715em;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.5); }
+      .photo-list-container .photo-panel .image-container img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 100%; }
+
+.album-manager-container {
+  width: 22.5%;
+  float: left; }
+  .album-manager-container .album-list li {
+    position: relative;
+    padding-right: 3em; }
+    .album-manager-container .album-list li:hover .delete {
+      display: block; }
+    .album-manager-container .album-list li i {
+      margin-right: 1em; }
+    .album-manager-container .album-list li .delete {
+      display: none;
+      position: absolute;
+      top: 50%;
+      right: .5em;
+      transform: translateY(-50%); }
+
 /* Misc settings */
+* {
+  outline: none; }
+
+a:hover {
+  text-decoration: none; }
+
 body {
+  overflow: hidden;
   background-color: #fcfcfc;
   color: #616161; }
+
+.logged-in .view-container {
+  width: 80%;
+  height: calc(100% - 50px);
+  overflow-y: scroll;
+  padding: 2em 2em 3em;
+  position: relative;
+  float: left; }
+  .logged-in .view-container .page-header {
+    margin-top: 0; }
+    .logged-in .view-container .page-header h1 {
+      margin-top: 0;
+      font-size: 2em; }
+.logged-in .content-container {
+  height: 100vh; }

@@ -1,0 +1,97 @@
+.dropzone {
+	.well {
+		border: 1px dashed $color-darkgrey;
+		text-align: center;
+		cursor: pointer;
+		color: $color-darkgrey;
+		transition: .3s all;
+		&:hover {
+			color: $color-lightgrey;
+		}
+	}
+	&.is-dragover {
+		.well {
+			border: 1px solid $color-darkgrey;
+		}
+	}
+	.circle {
+		font-size: 4em;
+	}
+	.info-message {
+		font-family: "Open Sans", Arial, sans-serif;
+		font-size: 1.5em;
+	}
+}
+
+.photo-list-container {
+	float: left;
+	width: 77.5%;
+	.photo-panel {
+		float: left;
+	    width: 13em;
+	    min-height: 13em;
+	    margin: 0 2% 2% 0;
+	    &:nth-child(4n) {
+	    	margin-right: 0;
+	    }
+	    .photo-name {
+	    	margin: .8em 0 0;
+	    }
+	    .album-label {
+	    	margin: .5em 0 0;
+	    }
+	    span.select2 {
+	    	width: 100% !important;
+	    	margin: .5em 0;
+	    }
+	    .btn {
+	    	font-size: .9em;
+			padding: .4em .95em;
+			&.btn-upload {
+				float: left
+			}
+			&.btn-delete {
+				float: right;
+			}
+	    }
+	    .image-container {
+	    	width: 10.715em;
+	    	height: 10.715em;
+	    	position: relative;
+	    	background-color: rgba(0,0,0,0.5);
+	    	img {
+	    		position: absolute;
+			    top: 50%;
+			    left: 50%;
+			    transform: translate(-50%, -50%);
+			    max-width: 100%;
+	    	}
+	    }
+	}
+}
+
+.album-manager-container {
+	width: 22.5%;
+	float: left;
+	.album-list {
+		li {
+			position: relative;
+			padding-right: 3em;
+			&:hover {
+				.delete {
+					display: block;
+				}
+			}
+			i {
+				margin-right: 1em;
+			}
+			.delete {
+				display: none;
+				position: absolute;
+				top: 50%;
+				right: .5em;
+				transform: translateY(-50%);
+			}
+		}
+	}
+}
