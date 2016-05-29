@@ -13,7 +13,7 @@ export class MainLayout extends Component {
 	}
 
 	getDefaultView() {
-		return this.props.currentUser ? <Dashboard {...this.props} /> : <Homepage {...this.props} />;
+		return this.props.currentUser ? FlowRouter.go('/dashboard') : <Homepage {...this.props} />;
 	}
 
 	getView() {
@@ -64,7 +64,9 @@ export default createContainer(() => {
 
 			let authenticatedRoutes = [
 				'dashboard',
-				'upload'
+				'upload',
+				'people',
+				'messages'
 			];
 
 			return this.currentUser ? authenticatedRoutes.indexOf(route) > -1 : publicRoutes.indexOf(route) > -1;

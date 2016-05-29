@@ -68,6 +68,7 @@ export class RegisterForm extends Component {
                 }
               });
             }
+            FlowRouter.go('/dashboard');
           }
         });
       }

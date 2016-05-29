@@ -44,7 +44,7 @@ export class UserHeaderArea extends Component {
 				</ul>
 		  	</div>
 		  	<div className="toolbar-icon">
-		  		<a alt="Messages" className="full-link" href="#"><i className="fa fa-envelope"></i></a>
+		  		<a alt="Messages" className="full-link" href="/messages"><i className="fa fa-envelope"></i></a>
 		  	</div>
 		  	<div className="toolbar-icon">
 		  		<a alt="Upload" href="/upload" className="upload-btn full-link"><i className="fa fa-cloud-upload"></i></a>

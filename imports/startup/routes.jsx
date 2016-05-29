@@ -50,3 +50,23 @@ authenticatedRoutes.route('/upload', {
     })
   }
 });
+
+// People
+authenticatedRoutes.route('/people', {
+  name: 'people',
+  action() {
+    mount(MainLayout, {
+      content: (props) => <People {...props} />
+    })
+  }
+});
+
+// Messages
+authenticatedRoutes.route('/messages', {
+  name: 'messages',
+  action() {
+    mount(MainLayout, {
+      content: (props) => <Messages {...props} />
+    })
+  }
+});

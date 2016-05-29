@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
+import {FlowRouter} from 'meteor/kadira:flow-router';
 import Footer from './Footer.jsx';
 import { Meteor } from 'meteor/meteor';
 import {
@@ -7,6 +8,9 @@ import {
 } from 'react-bootstrap';
 
 export default class Sidebar extends Component {
+	constructor(props) {
+		super(props);
+	}
 
 	render() {
 		return (
@@ -29,9 +33,9 @@ export default class Sidebar extends Component {
 		        		<nav role="navigation" className="widget-body">
 							<ul className="main-menu">
 								<li className="menu-title"><span>Navigation</span></li>
-								<li className="active"><a href="/dashboard"><i className="fa fa-home"></i><span>Dashboard</span></a></li>
-								<li><a href="/people"><i className="fa fa-cloud-upload"></i><span>Upload</span></a></li>
-								<li><a href="/people"><i className="fa fa-users"></i><span>People</span></a></li>
+								<li className={FlowHelpers.currentRoute('dashboard')}><a href="/dashboard"><i className="fa fa-home"></i>Dashboard</a></li>
+								<li className={FlowHelpers.currentRoute('upload')}><a href="/upload"><i className="fa fa-cloud-upload"></i>Upload</a></li>
+								<li className={FlowHelpers.currentRoute('people')}><a href="/people"><i className="fa fa-users"></i>People</a></li>
 							</ul>
 						</nav>
 		    		</div>

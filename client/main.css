@@ -211,6 +211,8 @@ footer {
   .sidebar-wrapper nav .main-menu {
     list-style-type: none;
     padding-left: 0 !important; }
+    .sidebar-wrapper nav .main-menu li:not(.menu-title) {
+      background-color: #006064; }
     .sidebar-wrapper nav .main-menu li:hover a {
       background-color: #007179;
       color: #e0f7fa; }
@@ -224,7 +226,8 @@ footer {
       color: #80deea;
       display: block;
       padding: .85em 1em;
-      position: relative; }
+      position: relative;
+      text-decoration: none !important; }
       .sidebar-wrapper nav .main-menu li a i {
         margin-left: 0;
         font-size: .8em;

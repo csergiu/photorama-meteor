@@ -40,6 +40,9 @@
 			list-style-type: none;
 			padding-left: 0 !important;
 			li {
+				&:not(.menu-title) {
+					background-color: $color-cyan;
+				}
 				&:hover {
 					a {
 						background-color: #007179;
@@ -60,6 +63,7 @@
 					display: block;
 					padding: .85em 1em;
 					position: relative;
+					text-decoration: none !important;
 					i {
 						margin-left: 0;
 						font-size: .8em;

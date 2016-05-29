@@ -23,7 +23,13 @@ export class LoginForm extends Component {
     let email = e.target.loginEmail.value;
     let password = e.target.password.value;
 
-    Meteor.loginWithPassword(email, password);
+    Meteor.loginWithPassword(email, password, (err) => {
+      if (err) {
+        alert("Wrong username or password.");
+      } else {
+        FlowRouter.go('/dashboard');
+      }
+    });
   }
 
   componentDidMount() {
