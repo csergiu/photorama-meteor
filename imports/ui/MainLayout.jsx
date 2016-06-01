@@ -66,7 +66,8 @@ export default createContainer(() => {
 				'dashboard',
 				'upload',
 				'people',
-				'messages'
+				'messages',
+				'photos'
 			];
 
 			return this.currentUser ? authenticatedRoutes.indexOf(route) > -1 : publicRoutes.indexOf(route) > -1;

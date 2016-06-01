@@ -36,6 +36,7 @@ export default class Sidebar extends Component {
 								<li className={FlowHelpers.currentRoute('dashboard')}><a href="/dashboard"><i className="fa fa-home"></i>Dashboard</a></li>
 								<li className={FlowHelpers.currentRoute('upload')}><a href="/upload"><i className="fa fa-cloud-upload"></i>Upload</a></li>
 								<li className={FlowHelpers.currentRoute('people')}><a href="/people"><i className="fa fa-users"></i>People</a></li>
+								<li className={FlowHelpers.currentRoute('photos')}><a href="/photos"><i className="fa fa-camera"></i>Photos</a></li>
 							</ul>
 						</nav>
 		    		</div>

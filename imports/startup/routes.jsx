@@ -6,6 +6,9 @@ import MainLayout from '../ui/MainLayout.jsx';
 import { Homepage } from '../ui/Views/Homepage.jsx';
 import { Register } from '../ui/Views/Register.jsx';
 import { Dashboard } from '../ui/Views/Dashboard.jsx';
+import { People } from '../ui/Views/People.jsx';
+import { Messages } from '../ui/Views/Messages.jsx';
+import { Photos } from '../ui/Views/Photos.jsx';
 import { Upload } from '../ui/Views/Upload.jsx';
 
 const publicRoutes = FlowRouter.group({ name: 'public' });
@@ -70,3 +73,15 @@ authenticatedRoutes.route('/messages', {
     })
   }
 });
+
+// Photos
+authenticatedRoutes.route('/photos', {
+  name: 'photos',
+  name: 'photos',
+  action() {
+    mount(MainLayout, {
+      content: (props) => <Photos {...props} />
+    })
+  }
+});
+
