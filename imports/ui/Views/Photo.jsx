@@ -46,7 +46,7 @@ export class Photo extends Component {
 				  	<div className="info-container">
 				  		<ListGroup>
 							<ListGroupItem active>Image information</ListGroupItem>
-							<ListGroupItem>by <a href="#">@{photo.by}</a></ListGroupItem>
+							<ListGroupItem>by <a href={"/profile/" + photo.userId}>@{photo.by}</a></ListGroupItem>
 							<ListGroupItem>Album: {photo.photoAlbum}</ListGroupItem>
 							<ListGroupItem header="Camera Model">{photo.exifData.model}</ListGroupItem>
 							<ListGroupItem header="Timestamp">{photo.exifData.timestamp}</ListGroupItem>

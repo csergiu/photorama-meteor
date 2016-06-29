@@ -37,7 +37,7 @@ export class UserHeaderArea extends Component {
 		  		<div className="user-avatar"><img className="img-circle" src={this.props.currentUser.profile.avatar[0] == 'h' ? this.props.currentUser.profile.avatar : "/" + this.props.currentUser.profile.avatar} /></div>
 		  		<span className="user-email noselect">{ this.props.currentUser.emails[0].address }</span>
 		  		<ul ref="dropdownMenu" className={dropdownMenuClasses}>
-					<li><a href="/profile"><span>Profile</span></a></li>
+					<li><a href={"/profile/" + this.props.currentUser._id}><span>Profile</span></a></li>
 					<li className="divider"></li>
 					<li><a href="#" onClick={ this.handleLogout.bind(this) }><span>Sign Out</span></a></li>
 				</ul>
