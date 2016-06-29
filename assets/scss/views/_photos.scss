@@ -1,0 +1,51 @@
+.photos-panels-container {
+	.photo-panel {
+		width: 23%;
+		border-radius: 6px;
+		overflow: hidden;
+		float: left;
+		margin: 0 1% 1em;
+		.panel-body {
+			padding: 0;
+		}
+		.image-container {
+			height: 11em;
+			position: relative;
+			overflow: hidden;
+			img {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 120%;
+			}
+		}
+	}
+	.photo-footer {
+		text-align: center;
+		a {
+			font-size: .8em;
+		}
+		span {
+			font-size: 1.2em;
+		}
+	}
+}
+
+.photos-container {
+	.filters-container {
+		margin: 0 1% 1.5em;
+		.camera,
+		.focal-length,
+		.aperture,
+		.shutter-speed {
+			width: 23%;
+			float: left;
+			margin: 0 1%;
+		}
+		.select2 {
+			float: left;
+			margin: 0 1%;
+		}
+	}
+}

@@ -29,7 +29,7 @@ export default class Header extends Component {
 
     if (this.props.currentUser) {
       loggedIn = <UserHeaderArea {...this.props} />;
-      appHomepage = "/dashboard"
+      appHomepage = "/photos"
     } else {
       loggedIn = <LoginForm />;
     }

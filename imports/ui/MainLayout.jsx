@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import {FlowRouter} from 'meteor/kadira:flow-router';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Homepage } from './Views/Homepage.jsx';
-import { Dashboard } from './Views/Dashboard.jsx';
 import Header from './Components/Header.jsx';
 import Footer from './Components/Footer.jsx';
 import Sidebar from './Components/Sidebar.jsx';
@@ -13,7 +12,7 @@ export class MainLayout extends Component {
 	}
 
 	getDefaultView() {
-		return this.props.currentUser ? FlowRouter.go('/dashboard') : <Homepage {...this.props} />;
+		return this.props.currentUser ? FlowRouter.go('/photos') : <Homepage {...this.props} />;
 	}
 
 	getView() {
@@ -63,11 +62,12 @@ export default createContainer(() => {
 			];
 
 			let authenticatedRoutes = [
-				'dashboard',
+				'photos',
+				'photo',				
 				'upload',
 				'people',
 				'messages',
-				'photos'
+				'profile'
 			];
 
 			return this.currentUser ? authenticatedRoutes.indexOf(route) > -1 : publicRoutes.indexOf(route) > -1;

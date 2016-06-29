@@ -12,6 +12,8 @@
 @import "vendors/bootstrap-theme.min.css";
 @import "vendors/font-awesome.min.css";
 @import "vendors/select2.css";
+@import "vendors/select2-bootstrap.css";
+@import "vendors/react-input-range.css";
 
 //= Components =//
 @import "components/header";
@@ -22,8 +24,11 @@
 
 //= Views =//
 @import "views/homepage";
-@import "views/dashboard";
 @import "views/upload";
+@import "views/photos";
+@import "views/photo";
+@import "views/people";
+@import "views/messages";
 
 /* Misc settings */
 
@@ -41,6 +46,19 @@ body {
 	overflow: hidden;
 	background-color: #fcfcfc;
 	color: #616161;
+}
+
+.delete {
+	cursor: pointer;
+}
+
+.profile-header {
+	img {
+		width: 7em;
+	}
+	p {
+		font-size: 1.4em;
+	}
 }
 
 .logged-in {

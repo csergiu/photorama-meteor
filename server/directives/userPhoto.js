@@ -1,10 +1,10 @@
-Slingshot.fileRestrictions("userPhotos", {
+Slingshot.fileRestrictions("userPhoto", {
   allowedFileTypes: ["image/png", "image/jpeg", "image/jpg"],
   maxSize: 30 * 1024 * 1024 // 30 megs max
 });
 
 
-Slingshot.createDirective("userPhotos", Slingshot.S3Storage, {
+Slingshot.createDirective("userPhoto", Slingshot.S3Storage, {
   bucket: "photoramaimages",
 
   acl: "public-read",

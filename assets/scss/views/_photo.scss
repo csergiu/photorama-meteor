@@ -1,0 +1,13 @@
+.photo-container {
+	.image-container,
+	.info-container {
+		float: right;
+		width: 49%;
+	}
+	.image-container {
+		float: left;
+		img {
+			max-width: 100%;
+		}
+	}
+}

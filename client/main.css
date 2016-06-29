@@ -2,6 +2,8 @@
 @import url(vendors/bootstrap-theme.min.css);
 @import url(vendors/font-awesome.min.css);
 @import url(vendors/select2.css);
+@import url(vendors/select2-bootstrap.css);
+@import url(vendors/react-input-range.css);
 @font-face {
   font-family: 'Liberation Bold';
   src: url("LiberationSans-Bold.ttf") format("ttf"), url("liberationsans-bold-webfont.woff") format("woff"), url("liberationsans-bold-webfont.woff2") format("woff2");
@@ -129,6 +131,7 @@ footer {
     margin: 0; }
 
 .logged-in .footer-container {
+  display: none;
   width: 100%; }
   .logged-in .footer-container footer {
     position: static; }
@@ -276,14 +279,27 @@ footer {
 
 .photo-list-container {
   float: left;
-  width: 77.5%; }
+  width: 77.5%;
+  margin-left: -1%; }
   .photo-list-container .photo-panel {
     float: left;
     width: 13em;
     min-height: 13em;
-    margin: 0 2% 2% 0; }
-    .photo-list-container .photo-panel:nth-child(4n) {
-      margin-right: 0; }
+    margin: 0 1% 2%;
+    overflow: hidden;
+    position: relative; }
+    .photo-list-container .photo-panel .success-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding-top: 40%; }
+      .photo-list-container .photo-panel .success-overlay span {
+        color: #00b400; }
     .photo-list-container .photo-panel .photo-name {
       margin: .8em 0 0; }
     .photo-list-container .photo-panel .album-label {
@@ -302,7 +318,8 @@ footer {
       width: 10.715em;
       height: 10.715em;
       position: relative;
-      background-color: rgba(0, 0, 0, 0.5); }
+      background-color: rgba(0, 0, 0, 0.5);
+      overflow: hidden; }
       .photo-list-container .photo-panel .image-container img {
         position: absolute;
         top: 50%;
@@ -312,7 +329,8 @@ footer {
 
 .album-manager-container {
   width: 22.5%;
-  float: left; }
+  float: right;
+  margin-left: 1%; }
   .album-manager-container .album-list li {
     position: relative;
     padding-right: 3em; }
@@ -327,6 +345,64 @@ footer {
       right: .5em;
       transform: translateY(-50%); }
 
+.photos-panels-container .photo-panel {
+  width: 23%;
+  border-radius: 6px;
+  overflow: hidden;
+  float: left;
+  margin: 0 1% 1em; }
+  .photos-panels-container .photo-panel .panel-body {
+    padding: 0; }
+  .photos-panels-container .photo-panel .image-container {
+    height: 11em;
+    position: relative;
+    overflow: hidden; }
+    .photos-panels-container .photo-panel .image-container img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120%; }
+.photos-panels-container .photo-footer {
+  text-align: center; }
+  .photos-panels-container .photo-footer a {
+    font-size: .8em; }
+  .photos-panels-container .photo-footer span {
+    font-size: 1.2em; }
+
+.photos-container .filters-container {
+  margin: 0 1% 1.5em; }
+  .photos-container .filters-container .camera,
+  .photos-container .filters-container .focal-length,
+  .photos-container .filters-container .aperture,
+  .photos-container .filters-container .shutter-speed {
+    width: 23%;
+    float: left;
+    margin: 0 1%; }
+  .photos-container .filters-container .select2 {
+    float: left;
+    margin: 0 1%; }
+
+.photo-container .image-container,
+.photo-container .info-container {
+  float: right;
+  width: 49%; }
+.photo-container .image-container {
+  float: left; }
+  .photo-container .image-container img {
+    max-width: 100%; }
+
+.filter-people-container {
+  margin: 3em 0; }
+  .filter-people-container .username {
+    width: 25%;
+    margin: 0 auto; }
+
+.messages-container .btn-compose {
+  margin: 0 0 1.5em; }
+.messages-container .message-panel {
+  margin: 0 0 1.5em; }
+
 /* Misc settings */
 * {
   outline: none; }
@@ -338,6 +414,14 @@ body {
   overflow: hidden;
   background-color: #fcfcfc;
   color: #616161; }
+
+.delete {
+  cursor: pointer; }
+
+.profile-header img {
+  width: 7em; }
+.profile-header p {
+  font-size: 1.4em; }
 
 .logged-in .view-container {
   width: 80%;

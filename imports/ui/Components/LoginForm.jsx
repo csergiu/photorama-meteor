@@ -27,7 +27,7 @@ export class LoginForm extends Component {
       if (err) {
         alert("Wrong username or password.");
       } else {
-        FlowRouter.go('/dashboard');
+        FlowRouter.go('/photos');
       }
     });
   }

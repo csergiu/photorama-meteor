@@ -5,11 +5,12 @@ import { mount } from 'react-mounter'
 import MainLayout from '../ui/MainLayout.jsx';
 import { Homepage } from '../ui/Views/Homepage.jsx';
 import { Register } from '../ui/Views/Register.jsx';
-import { Dashboard } from '../ui/Views/Dashboard.jsx';
-import { People } from '../ui/Views/People.jsx';
+import PeopleContainer, { People } from '../ui/Views/People.jsx';
 import { Messages } from '../ui/Views/Messages.jsx';
 import { Photos } from '../ui/Views/Photos.jsx';
+import { Photo } from '../ui/Views/Photo.jsx';
 import { Upload } from '../ui/Views/Upload.jsx';
+import { Profile } from '../ui/Views/Profile.jsx';
 
 const publicRoutes = FlowRouter.group({ name: 'public' });
 const authenticatedRoutes = FlowRouter.group( { name: 'authenticated' } );
@@ -34,12 +35,22 @@ publicRoutes.route('/register', {
   }
 });
 
-// Dashboard
-authenticatedRoutes.route('/dashboard', {
-  name: 'dashboard',
+// Photos
+authenticatedRoutes.route('/photos', {
+  name: 'photos',
   action() {
     mount(MainLayout, {
-      content: (props) => <Dashboard {...props} />
+      content: (props) => <Photos {...props} />
+    })
+  }
+});
+
+// Photo
+authenticatedRoutes.route('/photo/:photoId', {
+  name: 'photo',
+  action(params) {
+    mount(MainLayout, {
+      content: (props) => <Photo photoId={params.photoId} {...props} />
     })
   }
 });
@@ -59,7 +70,7 @@ authenticatedRoutes.route('/people', {
   name: 'people',
   action() {
     mount(MainLayout, {
-      content: (props) => <People {...props} />
+      content: (props) => <PeopleContainer {...props} />
     })
   }
 });
@@ -74,13 +85,12 @@ authenticatedRoutes.route('/messages', {
   }
 });
 
-// Photos
-authenticatedRoutes.route('/photos', {
-  name: 'photos',
-  name: 'photos',
-  action() {
+// Messages
+authenticatedRoutes.route('/profile/:userId', {
+  name: 'profile',
+  action(params) {
     mount(MainLayout, {
-      content: (props) => <Photos {...props} />
+      content: (props) => <Profile userId={params.userId} {...props} />
     })
   }
 });
