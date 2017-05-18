@@ -9,7 +9,7 @@ export default class Header extends Component {
     return (
       <div className="footer-container">
         <footer className="navbar-fixed-bottom text-center">
-          <p>&copy; Sergiu Calborean @ UBB Cluj 2016</p>
+          <p>&copy; Photorama 2017</p>
         </footer>
       </div>
     );
